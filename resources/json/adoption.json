@@ -1,0 +1,22 @@
+{
+  "adopt_pet": {
+    "description": "Adopt a pet endpoint",
+    "method": "POST",
+    "url": "/api/add-adoptions",
+    "requestBody": {
+      "u_id": "integer (user id)",
+      "a_id": "integer (adopter id)",
+      "p_id": "integer (pet id)",
+      "adoption_date": "string (date in YYYY-MM-DD format)"
+    },
+    "response": {
+      "message": "Pet adopted successfully",
+      "adoption": {
+        "a_id": "integer",
+        "u_id": "integer",
+        "p_id": "integer",
+        "adoption_date": "string"
+      }
+    }
+  }
+}

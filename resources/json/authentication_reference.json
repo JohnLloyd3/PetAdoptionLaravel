@@ -1,0 +1,45 @@
+{
+  "register": {
+    "description": "User registration endpoint",
+    "method": "POST",
+    "url": "/api/register",
+    "requestBody": {
+      "first_name": "string",
+      "middle_name": "string (optional)",
+      "last_name": "string",
+      "email": "string (unique)",
+      "password": "string (min 8 characters)",
+      "confirm_password": "string (must match password)"
+    },
+    "response": {
+      "message": "User created successfully",
+      "user": {
+        "id": "integer",
+        "first_name": "string",
+        "middle_name": "string",
+        "last_name": "string",
+        "email": "string"
+      }
+    }
+  },
+  "login": {
+    "description": "User login endpoint",
+    "method": "POST",
+    "url": "/api/login",
+    "requestBody": {
+      "email": "string",
+      "password": "string"
+    },
+    "response": {
+      "message": "User logged in successfully",
+      "user": {
+        "id": "integer",
+        "first_name": "string",
+        "middle_name": "string",
+        "last_name": "string",
+        "email": "string"
+      },
+      "token": "string"
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "get_adopters": {
+    "description": "Get all adopters",
+    "method": "GET",
+    "url": "/api/get-adopters",
+    "response": {
+      "adopters": [
+        {
+          "a_id": "integer",
+          "u_id": "integer",
+          "firstname": "string",
+          "lastname": "string",
+          "username": "string",
+          "email": "string",
+          "contact_number": "string"
+        }
+      ]
+    }
+  },
+  "add_adopter": {
+    "description": "Add a new adopter",
+    "method": "POST",
+    "url": "/api/add-adopters",
+    "requestBody": {
+      "u_id": "integer",
+      "firstname": "string",
+      "lastname": "string",
+      "username": "string",
+      "email": "string",
+      "contact_number": "string"
+    },
+    "response": {
+      "message": "Adopter added successfully",
+      "adopter": {
+        "a_id": "integer",
+        "u_id": "integer",
+        "firstname": "string",
+        "lastname": "string",
+        "username": "string",
+        "email": "string",
+        "contact_number": "string"
+      }
+    }
+  },
+  "edit_adopter": {
+    "description": "Edit an existing adopter",
+    "method": "PUT",
+    "url": "/api/edit-adopters/{id}",
+    "requestBody": {
+      "firstname": "string",
+      "lastname": "string",
+      "username": "string",
+      "email": "string",
+      "contact_number": "string"
+    },
+    "response": {
+      "message": "Adopter updated successfully",
+      "adopter": {
+        "a_id": "integer",
+        "u_id": "integer",
+        "firstname": "string",
+        "lastname": "string",
+        "username": "string",
+        "email": "string",
+        "contact_number": "string"
+      }
+    }
+  },
+  "delete_adopter": {
+    "description": "Delete an adopter",
+    "method": "DELETE",
+    "url": "/api/delete-adopters/{id}",
+    "response": {
+      "message": "Adopter deleted successfully"
+    }
+  }
+}

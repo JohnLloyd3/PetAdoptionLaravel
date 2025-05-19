@@ -1,0 +1,247 @@
+{
+  "users": {
+    "get_users": {
+      "description": "Get all users",
+      "method": "GET",
+      "url": "/api/get-users",
+      "response": {
+        "users": [
+          {
+            "id": 1,
+            "first_name": "John",
+            "middle_name": "A.",
+            "last_name": "Doe",
+            "email": "john.doe@example.com",
+            "role_id": 2,
+            "user_status_id": 1
+          }
+        ]
+      }
+    },
+    "add_user": {
+      "description": "Add a new user",
+      "method": "POST",
+      "url": "/api/add-user",
+      "requestBody": {
+        "first_name": "Jane",
+        "middle_name": "B.",
+        "last_name": "Smith",
+        "email": "jane.smith@example.com",
+        "password": "password123",
+        "role_id": 3,
+        "user_status_id": 1
+      },
+      "response": {
+        "message": "User added successfully",
+        "user": {
+          "id": 2,
+          "first_name": "Jane",
+          "middle_name": "B.",
+          "last_name": "Smith",
+          "email": "jane.smith@example.com",
+          "role_id": 3,
+          "user_status_id": 1
+        }
+      }
+    }
+  },
+  "roles": {
+    "get_roles": {
+      "description": "Get all roles",
+      "method": "GET",
+      "url": "/api/get-roles",
+      "response": {
+        "roles": [
+          {
+            "id": 1,
+            "role_name": "Admin"
+          },
+          {
+            "id": 2,
+            "role_name": "User"
+          },
+          {
+            "id": 3,
+            "role_name": "Teacher"
+          }
+        ]
+      }
+    },
+    "add_role": {
+      "description": "Add a new role",
+      "method": "POST",
+      "url": "/api/add-role",
+      "requestBody": {
+        "role_name": "Editor"
+      },
+      "response": {
+        "message": "Role added successfully",
+        "role": {
+          "id": 4,
+          "role_name": "Editor"
+        }
+      }
+    }
+  },
+  "user_statuses": {
+    "get_statuses": {
+      "description": "Get all user statuses",
+      "method": "GET",
+      "url": "/api/get-statuses",
+      "response": {
+        "statuses": [
+          {
+            "id": 1,
+            "status_name": "Active"
+          },
+          {
+            "id": 2,
+            "status_name": "Inactive"
+          }
+        ]
+      }
+    },
+    "add_status": {
+      "description": "Add a new user status",
+      "method": "POST",
+      "url": "/api/add-status",
+      "requestBody": {
+        "status_name": "Pending"
+      },
+      "response": {
+        "message": "Status added successfully",
+        "status": {
+          "id": 3,
+          "status_name": "Pending"
+        }
+      }
+    }
+  },
+  "adopters": {
+    "get_adopters": {
+      "description": "Get all adopters",
+      "method": "GET",
+      "url": "/api/get-adopters",
+      "response": {
+        "adopters": [
+          {
+            "a_id": 1,
+            "u_id": 2,
+            "firstname": "Alice",
+            "lastname": "Johnson",
+            "username": "alicej",
+            "email": "alice.johnson@example.com",
+            "contact_number": "123-456-7890"
+          }
+        ]
+      }
+    },
+    "add_adopter": {
+      "description": "Add a new adopter",
+      "method": "POST",
+      "url": "/api/add-adopters",
+      "requestBody": {
+        "u_id": 2,
+        "firstname": "Alice",
+        "lastname": "Johnson",
+        "username": "alicej",
+        "email": "alice.johnson@example.com",
+        "contact_number": "123-456-7890"
+      },
+      "response": {
+        "message": "Adopter added successfully",
+        "adopter": {
+          "a_id": 1,
+          "u_id": 2,
+          "firstname": "Alice",
+          "lastname": "Johnson",
+          "username": "alicej",
+          "email": "alice.johnson@example.com",
+          "contact_number": "123-456-7890"
+        }
+      }
+    }
+  },
+  "adoptions": {
+    "get_adoptions": {
+      "description": "Get all adoptions",
+      "method": "GET",
+      "url": "/api/get-adoptions",
+      "response": {
+        "adoptions": [
+          {
+            "a_id": 1,
+            "u_id": 2,
+            "p_id": 3,
+            "adoption_date": "2025-05-19"
+          }
+        ]
+      }
+    },
+    "add_adoption": {
+      "description": "Add a new adoption",
+      "method": "POST",
+      "url": "/api/add-adoptions",
+      "requestBody": {
+        "u_id": 2,
+        "a_id": 1,
+        "p_id": 3,
+        "adoption_date": "2025-05-19"
+      },
+      "response": {
+        "message": "Pet adopted successfully",
+        "adoption": {
+          "a_id": 1,
+          "u_id": 2,
+          "p_id": 3,
+          "adoption_date": "2025-05-19"
+        }
+      }
+    }
+  },
+  "pets": {
+    "get_pets": {
+      "description": "Get all pets",
+      "method": "GET",
+      "url": "/api/get-pets",
+      "response": {
+        "pets": [
+          {
+            "p_id": 3,
+            "u_id": 2,
+            "p_name": "Buddy",
+            "p_size": "Medium",
+            "p_age": 4,
+            "p_breed": "Golden Retriever",
+            "p_type": "Dog"
+          }
+        ]
+      }
+    },
+    "add_pet": {
+      "description": "Add a new pet",
+      "method": "POST",
+      "url": "/api/add-pets",
+      "requestBody": {
+        "u_id": 2,
+        "p_name": "Buddy",
+        "p_size": "Medium",
+        "p_age": 4,
+        "p_breed": "Golden Retriever",
+        "p_type": "Dog"
+      },
+      "response": {
+        "message": "Pet added successfully",
+        "pet": {
+          "p_id": 3,
+          "u_id": 2,
+          "p_name": "Buddy",
+          "p_size": "Medium",
+          "p_age": 4,
+          "p_breed": "Golden Retriever",
+          "p_type": "Dog"
+        }
+      }
+    }
+  }
+}

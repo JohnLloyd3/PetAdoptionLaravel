@@ -1,0 +1,235 @@
+{
+  "users": {
+    "get_users": {
+      "description": "Get all users",
+      "method": "GET",
+      "url": "/api/get-users",
+      "response": {
+        "users": [
+          {
+            "id": "integer",
+            "first_name": "string",
+            "middle_name": "string",
+            "last_name": "string",
+            "email": "string",
+            "role_id": "integer",
+            "user_status_id": "integer"
+          }
+        ]
+      }
+    },
+    "add_user": {
+      "description": "Add a new user",
+      "method": "POST",
+      "url": "/api/add-user",
+      "requestBody": {
+        "first_name": "string",
+        "middle_name": "string (optional)",
+        "last_name": "string",
+        "email": "string",
+        "password": "string",
+        "role_id": "integer",
+        "user_status_id": "integer"
+      },
+      "response": {
+        "message": "User added successfully",
+        "user": {
+          "id": "integer",
+          "first_name": "string",
+          "middle_name": "string",
+          "last_name": "string",
+          "email": "string",
+          "role_id": "integer",
+          "user_status_id": "integer"
+        }
+      }
+    }
+  },
+  "roles": {
+    "get_roles": {
+      "description": "Get all roles",
+      "method": "GET",
+      "url": "/api/get-roles",
+      "response": {
+        "roles": [
+          {
+            "id": "integer",
+            "role_name": "string"
+          }
+        ]
+      }
+    },
+    "add_role": {
+      "description": "Add a new role",
+      "method": "POST",
+      "url": "/api/add-role",
+      "requestBody": {
+        "role_name": "string"
+      },
+      "response": {
+        "message": "Role added successfully",
+        "role": {
+          "id": "integer",
+          "role_name": "string"
+        }
+      }
+    }
+  },
+  "user_statuses": {
+    "get_statuses": {
+      "description": "Get all user statuses",
+      "method": "GET",
+      "url": "/api/get-statuses",
+      "response": {
+        "statuses": [
+          {
+            "id": "integer",
+            "status_name": "string"
+          }
+        ]
+      }
+    },
+    "add_status": {
+      "description": "Add a new user status",
+      "method": "POST",
+      "url": "/api/add-status",
+      "requestBody": {
+        "status_name": "string"
+      },
+      "response": {
+        "message": "Status added successfully",
+        "status": {
+          "id": "integer",
+          "status_name": "string"
+        }
+      }
+    }
+  },
+  "adopters": {
+    "get_adopters": {
+      "description": "Get all adopters",
+      "method": "GET",
+      "url": "/api/get-adopters",
+      "response": {
+        "adopters": [
+          {
+            "a_id": "integer",
+            "u_id": "integer",
+            "firstname": "string",
+            "lastname": "string",
+            "username": "string",
+            "email": "string",
+            "contact_number": "string"
+          }
+        ]
+      }
+    },
+    "add_adopter": {
+      "description": "Add a new adopter",
+      "method": "POST",
+      "url": "/api/add-adopters",
+      "requestBody": {
+        "u_id": "integer",
+        "firstname": "string",
+        "lastname": "string",
+        "username": "string",
+        "email": "string",
+        "contact_number": "string"
+      },
+      "response": {
+        "message": "Adopter added successfully",
+        "adopter": {
+          "a_id": "integer",
+          "u_id": "integer",
+          "firstname": "string",
+          "lastname": "string",
+          "username": "string",
+          "email": "string",
+          "contact_number": "string"
+        }
+      }
+    }
+  },
+  "adoptions": {
+    "get_adoptions": {
+      "description": "Get all adoptions",
+      "method": "GET",
+      "url": "/api/get-adoptions",
+      "response": {
+        "adoptions": [
+          {
+            "a_id": "integer",
+            "u_id": "integer",
+            "p_id": "integer",
+            "adoption_date": "string"
+          }
+        ]
+      }
+    },
+    "add_adoption": {
+      "description": "Add a new adoption",
+      "method": "POST",
+      "url": "/api/add-adoptions",
+      "requestBody": {
+        "u_id": "integer",
+        "a_id": "integer",
+        "p_id": "integer",
+        "adoption_date": "string"
+      },
+      "response": {
+        "message": "Pet adopted successfully",
+        "adoption": {
+          "a_id": "integer",
+          "u_id": "integer",
+          "p_id": "integer",
+          "adoption_date": "string"
+        }
+      }
+    }
+  },
+  "pets": {
+    "get_pets": {
+      "description": "Get all pets",
+      "method": "GET",
+      "url": "/api/get-pets",
+      "response": {
+        "pets": [
+          {
+            "p_id": "integer",
+            "u_id": "integer",
+            "p_name": "string",
+            "p_size": "string",
+            "p_age": "integer",
+            "p_breed": "string",
+            "p_type": "string"
+          }
+        ]
+      }
+    },
+    "add_pet": {
+      "description": "Add a new pet",
+      "method": "POST",
+      "url": "/api/add-pets",
+      "requestBody": {
+        "u_id": "integer",
+        "p_name": "string",
+        "p_size": "string",
+        "p_age": "integer",
+        "p_breed": "string",
+        "p_type": "string"
+      },
+      "response": {
+        "message": "Pet added successfully",
+        "pet": {
+          "p_id": "integer",
+          "u_id": "integer",
+          "p_name": "string",
+          "p_size": "string",
+          "p_age": "integer",
+          "p_breed": "string",
+          "p_type": "string"
+        }
+      }
+    }
+  }
+}
