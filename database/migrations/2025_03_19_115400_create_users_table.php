@@ -3,9 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
-use App\Models\User;
 
 return new class extends Migration
 {
@@ -27,21 +25,6 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
-
-        $users = [
-            [
-                'first_name' => 'Admin',
-                'last_name' => 'Admin',
-                'email' => 'admin@gmail.com',
-                'password' => Hash::make('password'),
-                'role_id' => 1,
-                'user_status_id' => 1,
-            ],
-        ];
-
-        foreach($users as $user){
-            User::create($user);
-        }
     }
 
     /**
